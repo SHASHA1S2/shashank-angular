@@ -1,0 +1,26 @@
+<div class="container">
+    <div id="sidebar">
+		<ul>
+			<li ng-repeat="template in templates"><a href="" ng-click="clicks($index)">{{template.name}}</a></li>
+		</ul>
+    </div>
+    <div class="main-content">
+        <a href="#/welcome" data-toggle=".container" id="sidebar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="content" ng-include="template.url"></div>
+    </div>
+    </div>
+</div>
+
+
+
+<!--
+		<div class="animate-switch-container" ng-switch on="template">
+          <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+          <div class="animate-switch" ng-switch-when="home">Home Span</div>
+          <div class="animate-switch" ng-switch-default>default</div>
+		</div>
+-->
