@@ -1,0 +1,7 @@
+<div ng-controller="C1">
+	Enter your name: <input ng-model="name"><br>
+	<span ng-if="name">{{greeting}} {{name}} !!!</span>
+	<div ng-controller="C2" >
+		<span ng-if="name">{{greeting}} {{name}} !!!</span>
+	</div>
+</div>
