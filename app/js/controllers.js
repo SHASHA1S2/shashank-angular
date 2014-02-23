@@ -38,7 +38,6 @@ angular.module('myApp.controllers', []).
 			$(toggle_el).toggleClass("open-sidebar");
 		});
 		
-		$scope.templates=["partials/home.html","partials/explore.html","partials/users.html","partials/signout.html"];
 		$scope.templates=[{name:"Home",url:"partials/home.html"},{name:"Explore",url:"partials/explore.html"},{name:"Clients",url:"partials/users.html"},{name:"Sign Out",url:"partials/signout.html"}];
 		$scope.template=$scope.templates[0];
 		
