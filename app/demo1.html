@@ -1,0 +1,28 @@
+<html ng-app="myapp">
+	<head>
+		<script src="lib/angular/angular.js"></script>
+		<script src="script1.js"></script>
+	</head>
+	<body>
+		<form ng-controller="C1">
+			Select Country: 
+			<select ng-model="country" ng-options="c.name for c in places" ng-change="city=''"></select>
+			<span ng-show="country">
+				Select City: <select ng-model="city" ng-options="c.name for c in country.cities"></select>
+			</span>
+			<div ng-if="city">
+				<br/>
+				You have selected {{city.name}} city of country {{country.name}}
+			</div>
+			<div>
+				<button ng-click="country=''; city=''">Reset</button>
+			</div>
+			<br/>
+			<input ng-model="name" />
+			Name updated: {{updated}} times.
+			<div>
+				<button ng-click="r()">Reset</button>
+			</div>
+		</form>
+	</body>
+</html>

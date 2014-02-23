@@ -1,0 +1,28 @@
+<strong>Original Table</strong>
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>Phone</th>
+		<th>Age</th>
+	</tr>
+	<tr ng-repeat="friend in friends">
+		<td>{{friend.name}}</td>
+		<td>{{friend.phone}}</td>
+		<td>{{friend.age}}</td>
+	</tr>
+</table>
+<br/>
+<strong>Search: </strong>
+<input ng-model="searchText" />
+<table border="1">
+	<tr>
+		<th><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name</a></th>
+		<th><a href="" ng-click="predicate = 'phone'; reverse=!reverse">Phone</a></th>
+		<th><a href="" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>
+	</tr>
+	<tr ng-repeat="friend in friends | filter:searchText | orderBy:predicate:reverse">
+		<td>{{friend.name}}</td>
+		<td>{{friend.phone}}</td>
+		<td>{{friend.age}}</td>
+	</tr>
+</table>

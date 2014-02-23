@@ -1,0 +1,10 @@
+Enter the text to see the reverse filter demo<br/><br/>
+<input ng-model="greeting" /><br>
+<div ng-show="greeting">
+	No filter: {{greeting}}<br>
+	Reverse: {{greeting | rev}}<br>
+	LowerCase: {{greeting | lowercase}}<br>
+	UpperCase: {{greeting | uppercase}}<br>
+	Reverse + LowerCase: {{greeting | rev | lowercase}}<br>
+	Reverse + UpperCase: {{greeting | rev | uppercase}}<br>
+</div>

@@ -1,0 +1,38 @@
+<html ng-app="myapp">
+	<head>
+		<title>Angular App Demo</title>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-touch.js"></script>
+		<script src="lib/angular/angular-sanitize.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div>
+			<!-- ng-cloak directive used to prevent uncompiled html display while loaidng a page -->
+			<strong><u>ng-cloak example</u></strong><br/><br/>
+			<div id="template1" ng-cloak>{{ '&lt;div&gt;' }}</div>
+			<div id="template2" ng-cloak>{{ 'hello' }}</div>
+			<br/>
+		</div>
+		
+		<div ng-controller="TestController">
+			<!-- ng-transclude example (ng-transclude removes the text from its place and place transcluded text ) -->
+			<strong><u>ng-transclude example</u></strong><br/><br/>
+			<input ng-model="title"><br>
+			<textarea ng-model="text"></textarea> <br/>
+			<pane title="{{title}}">{{text}}</pane>
+			<br/>
+			
+			<!-- example to show difference between factory, service and providers -->
+			<strong><u>Service Factory and Provider Example</u></strong><br/><br/>
+			Call for Service: {{hellos[0]}}<br/>
+			Call for Factory: {{hellos[1]}}<br/>
+			Call for Provider: {{hellos[2]}}<br/>
+		
+			<!-- ngSanitize Example -->
+			<br/><strong><u>ngSanitize Example</u></strong><br/><br/>
+			<div ng-bind-html="snippet"></div>
+			<div ng-bind-html="snippet | linky:'_blank'"></div>
+		</div>
+	</body>
+</html>
